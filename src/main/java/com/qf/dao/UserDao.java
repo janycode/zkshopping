@@ -75,5 +75,7 @@ public interface UserDao {
      * @return
      */
     User selectUserByEmail(String email);
+
     int  updateUser(UpdateUserDto updateUserDto);
+
 }

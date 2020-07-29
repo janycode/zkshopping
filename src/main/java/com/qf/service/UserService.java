@@ -3,8 +3,8 @@ package com.qf.service;
 import com.qf.dto.FindPassUserDto;
 import com.qf.dto.LoginUserDto;
 import com.qf.dto.RegisterUserDto;
+
 import com.qf.dto.UpdateUserDto;
-import com.qf.pojo.User;
 import com.qf.vo.R;
 
 /**
@@ -81,12 +81,6 @@ public interface UserService {
      * @return
      */
     R checkToken(String userToken);
-	 /**
-     * 修改用户信息
-     * @param updateUserDto
-     * @return
-     */
-    R updateUser(String token, UpdateUserDto updateUserDto);
 
     /**
      * 退出登录
@@ -95,4 +89,12 @@ public interface UserService {
      * @return
      */
     R loginOut(String userToken);
+
+    /**
+     * 更新用户信息
+     * @param token
+     * @param updateUserDto
+     * @return
+     */
+    R updateUser(String token, UpdateUserDto updateUserDto);
 }
