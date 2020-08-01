@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/shopping-mall-index.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/zhonglin.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+
+		<!--top 开始-->
+		<div class="top">
+			<div class="top-con w1200">
+		    	<p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+		        <ul class="t-con-r f-r">
+		        	<li><span id="span_id"></span><a href="personalCenter.html">我 (个人中心)</a></li>
+					<li><span id="exit_spn"></span></li>
+		        	<li><a href="#">我的购物车</a></li>
+		        	<li><a href="myorder.html">我的订单</a></li>
+		        	<li class="erweima">
+		            	<a href="#">扫描二维码</a>
+		                <div class="ewm-tu">
+		                	<a href="#"><img src="images/erweima-tu.jpg" /></a>
+		                </div>
+		            </li>
+		            <div style="clear:both;"></div>
+		        </ul>
+		        <div style="clear:both;"></div>
+		    </div>
+		</div>
+
+		<!--logo search 开始-->
+		<div class="hd-info1 w1200">
+			<div class="logo f-l">
+				<h1><a href="aboutUs.html" title="中林网站"><img src="images/logo.jpg" /></a></h1>
+			</div>
+			<!--<div class="search f-r">
+				<ul class="sp">
+					<li class="current" ss-search="sp"><a href="JavaScript:;">商品</a></li>
+					<li ss-search="dp"><a href="JavaScript:;">店铺</a></li>
+					<div style="clear:both;"></div>
+				</ul>
+				<div class="srh">
+					<div class="ipt f-l">
+						<input type="text" placeholder="搜索商品..." ss-search-show="sp" />
+						<input type="text" placeholder="搜索店铺..." ss-search-show="dp" style="display:none;" />
+					</div>
+					<button class="f-r">搜 索</button>
+					<div style="clear:both;"></div>
+				</div>
+				<ul class="sp2">
+					<li><a href="#">绿豆</a></li>
+					<li><a href="#">大米</a></li>
+					<li><a href="#">驱蚊</a></li>
+					<li><a href="#">洗面奶</a></li>
+					<li><a href="#">格力空调</a></li>
+					<li><a href="#">洗发护发</a></li>
+					<li><a href="#">葡萄 </a></li>
+					<li><a href="#">脉动</a></li>
+					<li><a href="#">海鲜水产</a></li>
+					<div style="clear:both;"></div>
+				</ul>
+			</div>-->
+			<div style="clear:both;"></div>
+		</div>
+
+		<!--内容开始-->
+		<div class="password-con registered">
+			<div class="psw">
+				<p class="psw-p1">昵称</p>
+				<input type="text" id="nickname" placeholder="昵称" />
+				<span id="nickname_spn"></span>
+			</div>
+
+			<div class="psw">
+				<p class="psw-p1">真实姓名</p>
+				<input type="text" id="username" placeholder="2-8位中文" />
+				<span id="username_spn"></span>
+			</div>
+
+			<div class="psw">
+				<p class="psw-p1">输入密码</p>
+				<input type="password" id="password"  placeholder="6-16位密码" />
+				<span id="password_spn"></span>
+			</div>
+
+			<div class="psw">
+				<p class="psw-p1">确认密码</p>
+				<input type="password" id="repassword" placeholder="确认密码" />
+				<span id="repassword_spn"></span>
+			</div>
+
+			<div class="psw">
+				<p class="psw-p1">手机号</p>
+				<input type="text" id="phone" placeholder="手机号" />
+				<span id="phone_spn"></span>
+			</div>
+
+			<div class="psw psw2">
+				<p class="psw-p1">邮箱</p>
+				<input type="text" id="email" placeholder="邮箱" />
+				<button id="getCode">获取邮箱验证码</button>
+				<span id="email_spn"></span>
+			</div>
+
+			<div class="psw psw3">
+				<p class="psw-p1">验证码</p>
+				<input type="text" id="emailcode" placeholder="邮箱验证码" />
+				<span id="emailcode_spn"></span>
+			</div>
+
+			<div class="agreement">
+				<input type="checkbox" id="check_id" name="hobby"></input>
+				<p>我有阅读并同意<span><a href="">《宅客微购网站服务协议》</a></span></p>
+			</div>
+			<button class="psw-btn" id="reg_btn">立即注册</button>
+			<p class="sign-in">已有账号？请<a href="#">登录</a></p>
+		</div>
+
+		<!--底部服务-->
+		<div class="ft-service">
+			<div class="w1200">
+				<div class="sv-con-l2 f-l">
+					<dl>
+						<dt><a href="#">新手上路</a></dt>
+						<dd>
+							<a href="shoppingProcess.html">购物流程</a>
+							<a href="payOnline.html">在线支付</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">配送方式</a></dt>
+						<dd>
+							<a href="#">货到付款区域</a>
+							<a href="shippingFeeStandard .html">配送费标准</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">购物指南</a></dt>
+						<dd>
+							<a href="commonProblem.html">常见问题</a>
+							<a href="#">订购流程</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="returnAndExchangePolicy.html">售后服务</a></dt>
+						<dd>
+							<a href="returnAndExchangePolicy.html">售后服务保障</a>
+							<a href="returnAndExchangePolicy.html">退款说明</a>
+							<a href="selfRunReturnAndExchangePolicy.html.html">新手选购商品总则</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="aboutUs.html">关于我们</a></dt>
+						<dd>
+							<a href="#">投诉与建议</a>
+						</dd>
+					</dl>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="sv-con-r2 f-r">
+					<p class="sv-r-tle">187-8660-5539</p>
+					<p>周一至周五9:00-17:30</p>
+					<p>（仅收市话费）</p>
+					<a href="#" class="zxkf">24小时在线客服</a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+
+		<!--底部 版权-->
+		<div class="footer w1200">
+			<p>
+				<a href="aboutUs.html">关于我们</a><span>|</span>
+				<a href="#">友情链接</a><span>|</span>
+				<a href="#">宅客微购社区</a><span>|</span>
+				<a href="#">诚征英才</a><span>|</span>
+				<a href="#">商家登录</a><span>|</span>
+				<a href="#">供应商登录</a><span>|</span>
+				<a href="#">热门搜索</a><span>|</span>
+				<a href="#">宅客微购新品</a><span>|</span>
+				<a href="#">开放平台</a>
+			</p>
+			<p>
+				沪ICP备13044278号<span>|</span>合字B1.B2-20130004<span>|</span>营业执照<span>|</span>互联网药品信息服务资格证<span>|</span>互联网药品交易服务资格证
+			</p>
+		</div>
+
+		<script type="text/javascript">
+			
+			window.onload = function() {
+
+				//给用户名和密码框、Email、姓名、手机号分别绑定离焦事件
+				document.getElementById("nickname").onblur = checkNickname;
+				document.getElementById("username").onblur = checkUsername;
+				document.getElementById("password").onblur = checkPassword;
+				document.getElementById("repassword").onblur = checkRepassword;
+				document.getElementById("phone").onblur = checkPhone;
+				document.getElementById("email").onblur = checkEmail;
+				document.getElementById("emailcode").onblur = checkEmailcode;
+			}
+
+			//校验昵称
+			function checkNickname() {
+				//获取昵称
+				var nickname = document.getElementById("nickname").value;
+
+				//定义正则表达式
+				var reg_nickname = /^([a-zA-Z0-9_-])/;
+				//判断值是否符合正则表达式的规则
+				var flag = reg_nickname.test(nickname);
+
+				//提示信息
+				var nickname_spn = document.getElementById("nickname_spn");
+
+				if (flag) {
+					nickname_spn.innerHTML = "";
+				} else {
+					//提示红色错误信息
+					nickname_spn.innerHTML = "昵称格式有误！";
+					nickname_spn.style.color = "red";
+				}
+				return flag;
+			}
+
+			//校验真实姓名
+			function checkUsername() {
+				//获取真实姓名的值
+				var username = document.getElementById("username").value;
+
+				//定义正则表达式
+				var reg_username = /^[\u4e00-\u9fa5]{2,4}$/;
+				//判断值是否符合正则表达式的规则
+				var flag = reg_username.test(username);
+
+				//提示信息
+				var username_spn = document.getElementById("username_spn");
+
+				if (flag) {
+
+					username_spn.innerHTML = "";
+				} else {
+					//提示红色错误信息
+					username_spn.innerHTML = "真实姓名格式有误！";
+					username_spn.style.color = "red";
+				}
+				return flag;
+			}
+
+			//校验密码
+			function checkPassword() {
+				//1.获取密码的值
+				var password = document.getElementById("password").value;
+				//2.定义正则表达式
+				var reg_password = /^\w{6,12}$/;
+				//3.判断值是否符合正则的规则
+				var flag = reg_password.test(password);
+				//4.提示信息
+				var password_spn = document.getElementById("password_spn");
+
+				if (flag) {
+
+					password_spn.innerHTML = "";
+				} else {
+					//提示红色错误信息
+					password_spn.innerHTML = "密码格式有误";
+					password_spn.style.color = "red";
+				}
+				return flag;
+			}
+
+			// 校验确认密码
+			function checkRepassword() {
+				var password = document.getElementById("password").value;
+				var repassword = document.getElementById("repassword").value;
+				// 定义正则表达式
+				var reg_repassword = /^\w{6,12}$/;
+				// 判断值是否符合正则的规则
+				var flag = reg_repassword.test(repassword);
+				// 判断两次密码输入是否一致
+				if (password != repassword) {
+					flag = false;
+				}
+
+				// 提示信息
+				var repassword_spn = document.getElementById("repassword_spn");
+
+				if (flag) {
+
+					repassword_spn.innerHTML = "";
+				} else {
+					//提示红色错误信息
+					repassword_spn.innerHTML = "两次密码输入不一致";
+					repassword_spn.style.color = "red";
+				}
+				return flag;
+			}
+
+
+			//校验email
+			function checkEmail() {
+				//1.获取Email的值
+				var email = document.getElementById("email").value;
+				//2.定义正则表达式
+				var reg_email = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+				//3.判断值是否符合正则的规则
+				var flag = reg_email.test(email);
+				//4.提示信息
+				var email_spn = document.getElementById("email_spn");
+
+				if (flag) {
+					//提示绿色对勾
+					email_spn.innerHTML = "";
+				} else {
+					//提示红色错误信息
+					email_spn.innerHTML = "Email格式有误";
+					email_spn.style.color = "red";
+				}
+				return flag;
+			}
+
+
+			//校验手机号
+			function checkPhone() {
+				//1.获取手机号的值
+				var phone = document.getElementById("phone").value;
+				//2.定义正则表达式
+				var reg_phone = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+				//3.判断值是否符合正则的规则
+				var flag = reg_phone.test(phone);
+				//4.提示信息
+				var phone_spn = document.getElementById("phone_spn");
+
+				if (flag) {
+
+					phone_spn.innerHTML = "";
+				} else {
+					//提示红色错误信息
+					phone_spn.innerHTML = "手机号输入有误";
+					phone_spn.style.color = "red";
+				}
+				return flag;
+			}
+
+
+			// 是否勾选协议
+			function checkEmailcode() {
+
+				var checked = document.getElementById("check_id");
+				var flag = false;
+
+				if (checked.checked) {
+					flag = true;
+				}
+				return flag;
+			}
+
+
+			// 获取验证码
+			document.getElementById("getCode").onclick = function() {
+				var email = $("#email").val();
+
+				$.ajax({
+					url: "http://47.94.193.104:8080/zkshopping/api/user/sendEmailCode/" + email,
+					type: "post",
+					success: function(data) {
+						if (data.code != 200) {
+							alert("获取验证码失败");
+						}
+					}
+				});
+			}
+
+			document.getElementById("reg_btn").onclick = function() {
+				var nickname = document.getElementById("nickname").value;
+				var username = document.getElementById("username").value;
+				var password = document.getElementById("password").value;
+				var phone = document.getElementById("phone").value;
+				var email = document.getElementById("email").value;
+				var emailcode = document.getElementById("emailcode").value;
+				var json = {
+					"nickname": nickname,
+					"username": username,
+					"password": password,
+					"phone": phone,
+					"email": email,
+					"code": emailcode,
+
+				};
+
+				var jsonStr = JSON.stringify(json);
+
+
+				if (checkNickname() && checkUsername() && checkPassword() && checkRepassword() &&
+					checkPhone() && checkEmail() && checkEmailcode()) {
+
+					$.ajax({
+						url: "http://47.94.193.104:8080/zkshopping/api/user/userRegister",
+						type: "post",
+						data: jsonStr,
+						contentType: "application/json",
+						success: function(data) {
+							if (data.code == 200) {
+								alert("注册成功");
+								location.href = "login.html";
+							} else {
+								alert("注册失败，请重试");
+							}
+						}
+					});
+				} else {
+					alert("请完善信息");
+				}
+
+			}
+		</script>
+	</body>
+</html>

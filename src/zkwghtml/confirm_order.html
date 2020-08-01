@@ -1,0 +1,874 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>确认订单</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/shopping-mall-index.css" />
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/zhonglin.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="js/checkLogin.js"></script>
+		<script src="js/search.js"></script>
+		<style>
+
+		</style>
+	</head>
+
+	<body style="position:relative;">
+
+		<!--top 开始-->
+		<div class="top">
+			<div class="top-con w1200">
+		    	<p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+		        <ul class="t-con-r f-r">
+		        	<li><span id="span_id"></span><a href="personalCenter.html">我 (个人中心)</a></li>
+					<li><span id="exit_spn"></span></li>
+		        	<li><a href="#">我的购物车</a></li>
+		        	<li><a href="myorder.html">我的订单</a></li>
+		        	<li class="erweima">
+		            	<a href="#">扫描二维码</a>
+		                <div class="ewm-tu">
+		                	<a href="#"><img src="images/erweima-tu.jpg" /></a>
+		                </div>
+		            </li>
+		            <div style="clear:both;"></div>
+		        </ul>
+		        <div style="clear:both;"></div>
+		    </div>
+		</div>
+
+		<!--logo search 开始-->
+		<div class="hd-info1 w1200">
+			<div class="logo f-l">
+				<h1><a href="aboutUs.html" title="中林网站"><img src="images/logo.jpg" /></a></h1>
+			</div>
+			<div class="search f-r">
+				<ul class="sp">
+					<li class="current" ss-search="sp">
+						<a href="JavaScript:;">商品</a>
+					</li>
+					<li ss-search="dp">
+						<a href="JavaScript:;">店铺</a>
+					</li>
+					<div style="clear:both;"></div>
+				</ul>
+				<div class="srh">
+					<div class="ipt f-l">
+						<input id="searchGoods" type="text" placeholder="搜索商品..." ss-search-show="sp" />
+						<input  type="text" placeholder="搜索店铺..." ss-search-show="dp" style="display:none;" />
+					</div>
+					<button onclick="searchGoods()" class="f-r">搜 索</button>
+					<div style="clear:both;"></div>
+				</div>
+				<ul class="sp2">
+					<li>
+						<a href="#">绿豆</a>
+					</li>
+					<li>
+						<a href="#">大米</a>
+					</li>
+					<li>
+						<a href="#">驱蚊</a>
+					</li>
+					<li>
+						<a href="#">洗面奶</a>
+					</li>
+					<li>
+						<a href="#">格力空调</a>
+					</li>
+					<li>
+						<a href="#">洗发护发</a>
+					</li>
+					<li>
+						<a href="#">葡萄 </a>
+					</li>
+					<li>
+						<a href="#">脉动</a>
+					</li>
+					<li>
+						<a href="#">海鲜水产</a>
+					</li>
+					<div style="clear:both;"></div>
+				</ul>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+
+		<!--切换城市-->
+		<div class="switch-city w1200">
+			<a href="#" class="dianji-qh">切换城市</a>
+			<span class="dqm">重庆市</span>
+			<div class="select-city">
+				<div class="sl-city-top">
+					<p class="f-l">切换城市</p>
+					<a class="close-select-city f-r" href="#">
+						<img src="images/close-select-city.gif" />
+					</a>
+				</div>
+				<div class="sl-city-con">
+					<p>西北</p>
+					<dl>
+						<dt>重庆市</dt>
+						<dd>
+							<a href="#">长寿区</a>
+							<a href="#">巴南区</a>
+							<a href="#">南岸区</a>
+							<a href="#">九龙坡区</a>
+							<a href="#">沙坪坝区</a>
+							<a href="#">北碚</a>
+							<a href="#">江北区</a>
+							<a href="#">渝北区</a>
+							<a href="#">大渡口区</a>
+							<a href="#">渝中区</a>
+							<a href="#">万州</a>
+							<a href="#">武隆</a>
+							<a href="#">晏家</a>
+							<a href="#">长寿湖</a>
+							<a href="#">云集</a>
+							<a href="#">华中</a>
+							<a href="#">林封</a>
+							<a href="#">双龙</a>
+							<a href="#">石回</a>
+							<a href="#">龙凤呈祥</a>
+							<a href="#">朝天门</a>
+							<a href="#">中华</a>
+							<a href="#">玉溪</a>
+							<a href="#">云烟</a>
+							<a href="#">红塔山</a>
+							<a href="#">真龙</a>
+							<a href="#">天子</a>
+							<a href="#">娇子</a>
+						</dd>
+						<div style="clear:both;"></div>
+					</dl>
+					<dl>
+						<dt>新疆</dt>
+						<dd>
+							<a href="#">齐乌鲁木</a>
+							<a href="#">昌吉</a>
+							<a href="#">巴音</a>
+							<a href="#">郭楞</a>
+							<a href="#">伊犁</a>
+							<a href="#">阿克苏</a>
+							<a href="#">喀什</a>
+							<a href="#">哈密</a>
+							<a href="#">克拉玛依</a>
+							<a href="#">博尔塔拉</a>
+							<a href="#">吐鲁番</a>
+							<a href="#">和田</a>
+							<a href="#">石河子</a>
+							<a href="#">克孜勒苏</a>
+							<a href="#">阿拉尔</a>
+							<a href="#">五家渠</a>
+							<a href="#">图木舒克</a>
+							<a href="#">库尔勒</a>
+						</dd>
+						<div style="clear:both;"></div>
+					</dl>
+					<dl>
+						<dt>甘肃</dt>
+						<dd>
+							<a href="#">兰州</a>
+							<a href="#">天水</a>
+							<a href="#">巴音</a>
+							<a href="#">白银</a>
+							<a href="#">庆阳</a>
+							<a href="#">平凉</a>
+							<a href="#">酒泉</a>
+							<a href="#">张掖</a>
+							<a href="#">武威</a>
+							<a href="#">定西</a>
+							<a href="#">金昌</a>
+							<a href="#">陇南</a>
+							<a href="#">临夏</a>
+							<a href="#">嘉峪关</a>
+							<a href="#">甘南</a>
+						</dd>
+						<div style="clear:both;"></div>
+					</dl>
+					<dl>
+						<dt>宁夏</dt>
+						<dd>
+							<a href="#">银川</a>
+							<a href="#">吴忠</a>
+							<a href="#">石嘴山</a>
+							<a href="#">中卫</a>
+							<a href="#">固原</a>
+						</dd>
+						<div style="clear:both;"></div>
+					</dl>
+					<dl>
+						<dt>青海</dt>
+						<dd>
+							<a href="#">西宁</a>
+							<a href="#">海西</a>
+							<a href="#">海北</a>
+							<a href="#">果洛</a>
+							<a href="#">海东</a>
+							<a href="#">黄南</a>
+							<a href="#">玉树</a>
+							<a href="#">海南</a>
+						</dd>
+						<div style="clear:both;"></div>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<!--内容开始-->
+		<div class="payment-interface w1200">
+			<div  id="address" class="pay-info">
+				<div class="info-tit">
+					<h3>选择收货地址</h3>
+				</div>
+				<ul class="pay-dz">
+					<li v-for="a in addrs" @click="checkAdd(a.id)" >
+						<h3><span class="sp1">{{a.province}}</span><span class="sp2">{{a.city}}</span>（<span class="sp3">{{a.receiver_name}}</span> 收）</h3>
+						<p><span class="sp1">{{a.province}}{{a.city}}{{a.detailed_address}}</span><span class="sp2">{{a.phone}}</span></p>
+						<!--<a href="JavaScript:;" xiugai="">修改</a>-->
+					</li>
+					
+				
+					
+					<div style="clear:both;"></div>
+				</ul>
+				<P class="pay-xgdz">修改地址和使用新地址样式一样。</P>
+				<button class="pay-xdz-btn" id="new_addr">使用新地址</button>
+				<!--<button class="pay-xdz-btn">使用新地址</button>-->
+			</div>
+			<div class="pay-info">
+				<div class="info-tit" style="border-bottom:0;">
+					<h3>订单信息</h3>
+				</div>
+			</div>
+			<div class="cart-con-info">
+				<div class="cart-con-tit" style="margin:20px 0 5px;">
+					<p class="p1" style="width:400px;">
+						<!--<input type="checkbox" value="" name="hobby"></input>-->
+						<span id="store_name">商家：向东服饰专卖店</span>
+					</p>
+				<!--	<p class="p3" style="width:145px;">规格</p>-->
+					<p class="p4" style="width:130px;">数量</p>
+					<p class="p8" style="width:75px;">运费</p>
+					<p class="p5">单价（元）</p>
+					<p class="p6" style="width:173px;">金额（元）</p>
+					<p class="p7">配送方式</p>
+				</div>
+				<div class="info-mid">
+					<div class="mid-tu f-l">
+						<a href="#"><img id="goods_url" src="images/dai1.gif" style="width: 80px;height: 80px;;" /></a>
+					</div>
+					<div class="mid-font f-l" style="margin-right:40px;">
+						<a href="#" id="pruduct_name">登高阁紫菜肉松鸡蛋卷 海苔蛋卷 糕点<br />江西特产小吃 休闲办公零食</a>
+					</div>
+					<div class="mid-guige1 f-l" style="margin-right:40px;">
+						<!--<p>颜色：蓝色</p>
+						<p>尺码：XL</p>-->
+						
+					</div>
+					<div class="mid-sl f-l" style="margin:10px 54px 0px 0px;">
+						<a href="JavaScript:;" class="sl-left">-</a>
+						<input id="count" type="number" value="1" />
+						<a href="JavaScript:;" class="sl-right">+</a>
+					</div>
+					<p class="mid-yunfei f-l">¥ 0.00</p>
+					<p class="mid-dj f-l">¥ 66.00</p>
+					<p class="mid-je f-l" style="margin:10px 100px 0px 0px;">¥ 66.00</p>
+					<div class="mid-chaozuo f-l">
+						<select id="send_method">
+							<option value="1">送货上门</option>
+							<option value="2">快递包邮</option>
+						</select>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<!--<div class="cart-con-tit" style="margin:20px 0 5px;">
+                <p class="p1" style="width:400px;">
+                    <input type="checkbox" value="" name="hobby"></input>
+                    <span>商家：向东服饰专卖店</span>
+                </p>
+                <p class="p3" style="width:145px;">规格</p>
+                <p class="p4" style="width:130px;">数量</p>
+                <p class="p8" style="width:75px;">运费</p>
+                <p class="p5">单价（元）</p>
+                <p class="p6" style="width:173px;">金额（元）</p>
+                <p class="p7">配送方式</p>
+            </div>
+            <div class="info-mid">
+                <div class="mid-tu f-l">
+                	<a href="#"><img src="images/dai1.gif" /></a>
+                </div>
+                <div class="mid-font f-l" style="margin-right:40px;">
+                	<a href="#">登高阁紫菜肉松鸡蛋卷 海苔蛋卷 糕点<br />江西特产小吃 休闲办公零食</a>
+                </div>
+                <div class="mid-guige1 f-l" style="margin-right:40px;">
+                	<p>颜色：蓝色</p>
+                    <p>尺码：XL</p>
+                </div>
+                <div class="mid-sl f-l" style="margin:10px 54px 0px 0px;">
+                	<a href="JavaScript:;" class="sl-left">-</a>
+                    <input type="text" value="1" />
+                    <a href="JavaScript:;" class="sl-right">+</a>
+                </div>
+                <p class="mid-yunfei f-l">¥ 0.00</p>
+                <p class="mid-dj f-l">¥ 66.00</p>
+                <p class="mid-je f-l" style="margin:10px 120px 0px 0px;">¥ 66.00</p>
+                <div class="mid-chaozuo f-l">
+                	<select>
+                    	<option>送货上门</option>
+                    	<option>快递包邮</option>
+                    </select>
+                </div>
+                <div style="clear:both;"></div>
+            </div>-->
+
+				<div class="info-heji">
+					<p class="f-r">店铺合计(含运费)：<span id="store_all_price">¥46.60</span></p>
+					<h3 class="f-r">订单号：<span id="WIDout_trade_no" name="out_trade_no" /></h3>
+
+				</div>
+				<div class="info-tijiao">
+					<p class="p1">实付款：<span id="real_price">¥ 46.60</span></p>
+					<form name="alipayment" action="http://47.94.193.104:8080/zkshopping/api/order/alipay" method="post">
+						<!--<form name="alipayment" action="http://127.0.0.1:8080/api/order/alipay" method="post">-->
+						 <!--target="_blank"-->
+						 
+						<input type="hidden" name="out_trade_no" />
+						<input type="hidden" name="total_amount" />
+						<input type="hidden" name="subject" />
+						<input type="hidden" name="body" />
+
+						<!--<input type="hidden" name="user_id" value="1"/>-->
+						<input type="hidden" id="token"name="token" value="1"/>
+						买家留言:<input type="text" name="buyer_message" />
+						<input type="hidden" name="send_method" value="2"/>
+						<input type="hidden" name="receiver_addr_id" />
+						<input type="hidden" name="goods_num" value="1"/>
+						<input type="hidden" name="goods_id" value="1"/>
+
+
+					</form>
+					<button id="order_commit" class="btn">提交订单</button>
+				</div>
+
+			</div>
+		</div>
+
+		<!--底部服务-->
+		<div class="ft-service">
+			<div class="w1200">
+				<div class="sv-con-l2 f-l">
+					<dl>
+						<dt><a href="#">新手上路</a></dt>
+						<dd>
+							<a href="shoppingProcess.html">购物流程</a>
+							<a href="payOnline.html">在线支付</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">配送方式</a></dt>
+						<dd>
+							<a href="#">货到付款区域</a>
+							<a href="shippingFeeStandard .html">配送费标准</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">购物指南</a></dt>
+						<dd>
+							<a href="commonProblem.html">常见问题</a>
+							<a href="#">订购流程</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="returnAndExchangePolicy.html">售后服务</a></dt>
+						<dd>
+							<a href="returnAndExchangePolicy.html">售后服务保障</a>
+							<a href="returnAndExchangePolicy.html">退款说明</a>
+							<a href="selfRunReturnAndExchangePolicy.html.html">新手选购商品总则</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="aboutUs.html">关于我们</a></dt>
+						<dd>
+							<a href="#">投诉与建议</a>
+						</dd>
+					</dl>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="sv-con-r2 f-r">
+					<p class="sv-r-tle">187-8660-5539</p>
+					<p>周一至周五9:00-17:30</p>
+					<p>（仅收市话费）</p>
+					<a href="#" class="zxkf">24小时在线客服</a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+		
+		<!--底部 版权-->
+		<div class="footer w1200">
+			<p>
+				<a href="aboutUs.html">关于我们</a><span>|</span>
+				<a href="#">友情链接</a><span>|</span>
+				<a href="#">宅客微购社区</a><span>|</span>
+				<a href="#">诚征英才</a><span>|</span>
+				<a href="#">商家登录</a><span>|</span>
+				<a href="#">供应商登录</a><span>|</span>
+				<a href="#">热门搜索</a><span>|</span>
+				<a href="#">宅客微购新品</a><span>|</span>
+				<a href="#">开放平台</a>
+			</p>
+			<p>
+				沪ICP备13044278号<span>|</span>合字B1.B2-20130004<span>|</span>营业执照<span>|</span>互联网药品信息服务资格证<span>|</span>互联网药品交易服务资格证
+			</p>
+		</div>
+
+		<!--确认订单（新增地址）-->
+		<div class="confirmation-tanchuang" xgdz1="">
+			<div class="tanchuang-bg"></div>
+			<div class="tanchuang-con">
+				<div class="tc-title">
+					<h3>新增地址</h3>
+					<a href="JavaScript:;" dz-guan=""><img src="images/close-select-city.gif" /></a>
+					<div style="clear:both;"></div>
+				</div>
+				<ul class="tc-con2">
+					<li class="tc-li1">
+						<p class="l-p">所在地区<span>*</span></p>
+						<div class="xl-dz">
+							<div class="dz-left f-l">
+								<p>新疆</p>
+								<ul>
+									<li class="current">
+										<a href="#">新疆</a>
+									</li>
+									<li>
+										<a href="#">甘肃</a>
+									</li>
+									<li>
+										<a href="#">宁夏</a>
+									</li>
+									<li>
+										<a href="#">青海</a>
+									</li>
+									<li>
+										<a href="#">重庆</a>
+									</li>
+									<li>
+										<a href="#">长寿</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dz-right f-l">
+								<p>乌鲁木齐</p>
+								<ul>
+									<li class="current">
+										<a href="#">乌鲁木齐</a>
+									</li>
+									<li>
+										<a href="#">昌吉</a>
+									</li>
+									<li>
+										<a href="#">巴音</a>
+									</li>
+									<li>
+										<a href="#">郭楞</a>
+									</li>
+									<li>
+										<a href="#">伊犁</a>
+									</li>
+									<li>
+										<a href="#">阿克苏</a>
+									</li>
+									<li>
+										<a href="#">喀什</a>
+									</li>
+									<li>
+										<a href="#">哈密</a>
+									</li>
+									<li>
+										<a href="#">克拉玛依</a>
+									</li>
+									<li>
+										<a href="#">博尔塔拉</a>
+									</li>
+									<li>
+										<a href="#">吐鲁番</a>
+									</li>
+									<li>
+										<a href="#">和田</a>
+									</li>
+									<li>
+										<a href="#">石河子</a>
+									</li>
+									<li>
+										<a href="#">克孜勒苏</a>
+									</li>
+									<li>
+										<a href="#">阿拉尔</a>
+									</li>
+									<li>
+										<a href="#">五家渠</a>
+									</li>
+									<li>
+										<a href="#">图木舒克</a>
+									</li>
+									<li>
+										<a href="#">库尔勒</a>
+									</li>
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+							<div style="clear:both;"></div>
+						</div>
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">详细地址<span>*</span></p>
+						<textarea class="textarea1" placeholder="请如实填写您的详细信息，如街道名称、门牌号、楼层号和房间号。"></textarea>
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">邮政编码<span></span></p>
+						<input type="text" />
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">收货人姓名<span>*</span></p>
+						<input type="text" />
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">联系电话<span>*</span></p>
+						<input type="text" />
+						<div style="clear:both;"></div>
+					</li>
+				</ul>
+				<button class="btn-pst2">保存</button>
+			</div>
+		</div>
+
+		<!--修改地址-->
+		<div class="confirmation-tanchuang" xgdz2="">
+			<div class="tanchuang-bg"></div>
+			<div class="tanchuang-con">
+				<div class="tc-title">
+					<h3>新增地址</h3>
+					<a href="JavaScript:;" dz-guan=""><img src="images/close-select-city.gif" /></a>
+					<div style="clear:both;"></div>
+				</div>
+				<ul class="tc-con2">
+					<li class="tc-li1">
+						<p class="l-p">所在地区<span>*</span></p>
+						<div class="xl-dz">
+							<div class="dz-left f-l">
+								<p>北京</p>
+								<ul>
+									<li class="current">
+										<a href="#">新疆</a>
+									</li>
+									<li>
+										<a href="#">甘肃</a>
+									</li>
+									<li>
+										<a href="#">宁夏</a>
+									</li>
+									<li>
+										<a href="#">青海</a>
+									</li>
+									<li>
+										<a href="#">重庆</a>
+									</li>
+									<li>
+										<a href="#">长寿</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dz-right f-l">
+								<p>天安门</p>
+								<ul>
+									<li class="current">
+										<a href="#">乌鲁木齐</a>
+									</li>
+									<li>
+										<a href="#">昌吉</a>
+									</li>
+									<li>
+										<a href="#">巴音</a>
+									</li>
+									<li>
+										<a href="#">郭楞</a>
+									</li>
+									<li>
+										<a href="#">伊犁</a>
+									</li>
+									<li>
+										<a href="#">阿克苏</a>
+									</li>
+									<li>
+										<a href="#">喀什</a>
+									</li>
+									<li>
+										<a href="#">哈密</a>
+									</li>
+									<li>
+										<a href="#">克拉玛依</a>
+									</li>
+									<li>
+										<a href="#">博尔塔拉</a>
+									</li>
+									<li>
+										<a href="#">吐鲁番</a>
+									</li>
+									<li>
+										<a href="#">和田</a>
+									</li>
+									<li>
+										<a href="#">石河子</a>
+									</li>
+									<li>
+										<a href="#">克孜勒苏</a>
+									</li>
+									<li>
+										<a href="#">阿拉尔</a>
+									</li>
+									<li>
+										<a href="#">五家渠</a>
+									</li>
+									<li>
+										<a href="#">图木舒克</a>
+									</li>
+									<li>
+										<a href="#">库尔勒</a>
+									</li>
+									<div style="clear:both;"></div>
+								</ul>
+							</div>
+							<div style="clear:both;"></div>
+						</div>
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">详细地址<span>*</span></p>
+						<textarea class="textarea1" placeholder="请如实填写您的详细信息，如街道名称、门牌号、楼层号和房间号。"></textarea>
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">邮政编码<span></span></p>
+						<input type="text" />
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">收货人姓名<span>*</span></p>
+						<input type="text" class="shxm" />
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">联系电话<span>*</span></p>
+						<input type="text" class="lxdh" />
+						<div style="clear:both;"></div>
+					</li>
+				</ul>
+				<button class="btn-pst2">保存</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		//localStorage.setItem("zkwgtoken","224dece0a0a24c64bb308c099cd21869_1");
+		
+		var address=new Vue({
+			el: '#address',   //设置标签 只支持ID
+			  data: {  //数据源				
+				addrs:[],
+				current:"current"
+			  },methods:{
+				  checkAdd:function(id){
+				  	//alert(id);				  	
+				  	$("input[name='receiver_addr_id']").val(id);
+					  $(".pay-dz li").click(function(event) {
+						$(this).addClass('current').siblings().removeClass("current");
+						});
+				  }
+			  }
+		});
+		var token=localStorage.getItem("zkwgtoken");
+		console.log(token);
+		$.ajax({
+			
+			type:"post",
+			url:"http://47.94.193.104:8080/zkshopping/api/ReceverAddressInfo/selectByUid",
+			// url:"http://localhost:8080/api/ReceverAddressInfo/selectByUid",
+			headers:{
+				zkwgtoken:token
+			},
+			async:true,
+			success:function(data){
+				console.log(data);
+				address.addrs=data.data;
+			}
+		});
+	</script>
+	<script language="javascript">
+		$(function() {
+			
+			$("#new_addr").click(function () {
+				window.open("receiveAddress.html");
+				//location.href="receiveAddress.html";
+			})
+			
+			
+			
+			var token=localStorage.getItem("zkwgtoken");
+			
+			$("#token").val(token);
+			 //alert(token);
+			/**
+			 * 根据包邮方式的选择更新参数传递
+			 */
+			$("#send_method").change(function () {
+				$("input[name='send_method']").val($("#send_method").val())
+			})
+			
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+			//console.log(vars);
+			var id;
+			for(var i = 0; i < vars.length; i++) {
+				var pair = vars[i].split("=");
+				if(pair[0] == 'goods_num') {
+					//console.log("goods_num")
+					var goods_num=pair[1];
+					$("#count").val(goods_num);
+					//$("#send_method").change();
+					$('#send_method').trigger("change");
+					
+				}else if(pair[0] == 'goods_id') {
+					goods_id= pair[1];
+					$("input[name='goods_id']").val(goods_id);
+					//console.log($("input[name='goods_id']").val());
+							$.ajax({
+						type:"get",
+						url:"http://47.94.193.104:8080/zkshopping/api/shopController/queryById/"+goods_id,
+						//url:"http://127.0.0.1:8080/api/shopController/queryById/"+goods_id,
+						
+						async:true,
+						success:function (data) {
+							console.log(data);
+							var code=data.code;
+							var msg=data.msg;
+							var data=data.data;
+							var url=data.url;
+							$("#goods_url").attr("src",url);
+							var name=data.name;
+							$("#pruduct_name").text(name);
+							var price=data.price;
+							$(".mid-dj").text("¥ "+price+".00");
+							$(".mid-je").text("¥ "+price+".00");
+							$("#store_all_price").text("¥ "+price+".00");
+							$("#real_price").text("¥ "+price+".00");
+							var store_name=data.store_name;
+							$("#store_name").html("商家："+store_name);
+							//console.log(data.url);
+							//console.log(code);
+						}
+					});
+					
+					
+				}
+			}
+			//user_id利用token 从后端取
+			//$("input[name='user_id']").val();
+			//console.log(id);
+		});
+		$("#order_commit").click(function() {
+			var addr_id=$("input[name='receiver_addr_id']").val();
+			if(addr_id!=""){
+				
+				var out_trade_no = $("#WIDout_trade_no").text();
+			$("input[name='out_trade_no']").val(out_trade_no);
+			console.log($("input[name='out_trade_no']").val());
+			//总价格
+			var total_amount = $("#real_price").text().substr(2, $("#real_price").text().length);
+			$("input[name='total_amount']").val(total_amount);
+			console.log($("input[name='total_amount']").val());
+			//订单标题
+			var subject = $("#pruduct_name").text();
+			$("input[name='subject']").val(subject);
+			console.log($("input[name='subject']").val());
+			//商品描述
+			var body = "我是商品描述  暂时还没有写活哦(⊙﹏⊙)";
+			$("input[name='body']").val(body);
+			console.log($("input[name='body']").val());
+			$("form").submit();
+			//		$.ajax({
+			//			type:"post",
+			//			url:"http://127.0.0.1:8080/order/alipay",
+			//			async:true,
+			//			data:{
+			//				"out_trade_no":out_trade_no,
+			//				"total_amount":total_amount,
+			//				"subject":subject,
+			//				"body":body
+			//			},
+			//			success:function (data) {
+			//				console.log(data);
+			//			}
+			//		});
+			}else{
+				alert("您还没有选择收货地址");
+			}
+			//console.log(addr_id);
+			//商家订单编号
+			
+		})
+		/**
+		 * 根据商品数量更新页面价格
+		 */
+		$("#count").change(function() {
+			//console.log($("#count").val());
+			var count = $("#count").val();
+			if(count<1){
+				$("#count").val(1)
+			}
+			var singlePrice = $(".mid-dj").text().substr(2, $(".mid-dj").text().length);
+			var totalPrice = '￥ ' + count * singlePrice + '.00';
+			$(".mid-je").text(totalPrice);
+			$("#store_all_price").text(totalPrice);
+			$("#real_price").text(totalPrice);
+			$("input[name='goods_num']").val(count);
+
+		})
+
+		function countChange() {
+
+		}
+
+		/**
+		 * 动态设置订单号--不重复
+		 */
+		function GetDateNow() {
+			var vNow = new Date();
+			var sNow = "";
+			sNow += String(vNow.getFullYear());
+			sNow += String(vNow.getMonth() + 1);
+			sNow += String(vNow.getDate());
+			sNow += String(vNow.getHours());
+			sNow += String(vNow.getMinutes());
+			sNow += String(vNow.getSeconds());
+			sNow += String(vNow.getMilliseconds());
+
+			document.getElementById("WIDout_trade_no").innerText = sNow;
+			//document.getElementById("WIDout_trade_no").value =  sNow;
+			//document.getElementById("WIDsubject").value = "测试";
+			//document.getElementById("WIDtotal_amount").value = "1.00";
+		}
+		GetDateNow();
+	</script>
+
+</html>
